@@ -79,3 +79,14 @@ submitBtn.addEventListener('click', (event) => {
         alert('Cannot submit incomplete form');
     }
 })
+
+
+/*
+TODO
+- seperate into mulitple js files
+- create a better table that displays read status, number of pages,
+    published date, author, title.
+- make sure new ui has remove book feature
+- make it easier to create and get dom elements ie dom.create dom.get
+- fill library with some dummy content
+*/
