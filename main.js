@@ -23,7 +23,12 @@ date.value = currentYear;
 const list = document.getElementById('list');
 
 function updateList() {
+    while (list.firstChild) {
+        list.removeChild(list.firstChild);
+    }
+
     myLibrary.forEach(book => {
+        
         let listItem = document.createElement('li');
 
         let title = document.createElement('p');
@@ -54,6 +59,7 @@ submitBtn.addEventListener('click', (event) => {
         addBookToLibrary(input.title, input.author, input.date);
         updateList();
         input.form.reset();
+        date.value = currentYear;
     } else {
         alert('Cannot submit incomplete form');
     }
