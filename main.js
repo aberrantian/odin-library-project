@@ -40,7 +40,22 @@ function updateList() {
         let date = document.createElement('p');
         date.textContent = book.date;
 
-        listItem.append(title, author, date);
+        let remove = document.createElement('p');
+        remove.textContent = 'remove';
+        remove.classList.add('remove');
+        remove.addEventListener('click', (event) => {
+            const targetIndex = myLibrary.indexOf(book);
+            if (confirm(`Remove ${book.title} by ${book.author} from library?`)) {
+                if (targetIndex > -1) {
+                    myLibrary.splice(targetIndex, 1);
+                    updateList();
+                }
+            }
+        })
+
+        book.remove = remove;
+
+        listItem.append(title, author, date, book.remove);
         list.appendChild(listItem);
     });
 }
