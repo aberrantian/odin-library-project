@@ -1,0 +1,14 @@
+requirements:
+ - library is stored as a single array
+ - need to take user input to add books to library
+ - book object needs; author, title, number of pages,
+    read status, and date published.
+ - represent library in a table
+ - a function that loops through library array and
+    displays each book on the page
+ - need to be able to keep track of each book to add
+    the remove feature
+ - error screen for incomplete form
+ - confirmation screen for removing books: lists books
+    to be removed
+ - select mulitple books to edit read status or remove
