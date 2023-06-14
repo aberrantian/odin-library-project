@@ -5,17 +5,16 @@ export const screenTemplates = {
     library: createLibraryScreen
 }
 
-export function setScreen(screen) {
-    const screens = {
-        library: doc.get('libraryScreen')
+export const screens = {
+    library: function() {
+        return doc.get('libraryScreen');
     }
-    
+}
+
+export function setScreen(screen = doc.get('libraryScreen')) {
     for (const screen in screens) {
-        screen.hidden = true;
+        screens[screen]().hidden = true;
     }
 
-    const defaultScreen = screen.library;
-
-    const newScreen = screen || defaultScreen;
-    newScreen.hidden = false;
+    screen.hidden = false;
 }
