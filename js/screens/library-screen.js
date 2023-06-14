@@ -1,4 +1,4 @@
-import { doc } from "../doc.js";
+import { doc } from "../helper/doc.js";
 
 export function createLibraryScreen() {
     const libraryScreen = doc.new('div');

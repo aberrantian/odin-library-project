@@ -1,4 +1,4 @@
-import { screenTemplates, setScreen } from "./screens/screenmgr.js";
+import { screenTemplates, setScreen } from "./helper/screenmgr.js";
 
 export function init() {
     for (const key in screenTemplates) {

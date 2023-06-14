@@ -1,5 +1,5 @@
-import { createLibraryScreen } from "./library-screen.js";
-import { doc } from "../doc.js";
+import { createLibraryScreen } from "../screens/library-screen.js";
+import { doc } from "./doc.js";
 
 export const screenTemplates = {
     library: createLibraryScreen
