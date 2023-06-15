@@ -1,6 +1,7 @@
 import { screenTemplates, setScreen } from "./helper/screenmgr.js";
 import { dummyContent } from "./helper/dummyContent.js";
-import { updateTable } from "./helper/updateTable.js";
+import { doc } from "./helper/doc.js";
+import { updateLibrary } from "./helper/updateLibrary.js";
 
 // setup library datebase
 export let books = [];
@@ -10,7 +11,9 @@ dummyContent.forEach(book => {
 
 // setup table contents;
 // export let table = [];
-// updateTable();
+// let table = doc.get('library');
+// console.log(table);
+updateLibrary();
 
 // setup screens
 export function init() {
