@@ -33,6 +33,11 @@ export function updateLibrary() {
             cards.push(card);
         });
     
+        for (let index = 0; index < cards.length; index++) {
+            const card = cards[index];
+            card.id = index + 1;
+        }
+        
         cards.forEach(card => {
             grid.appendChild(card);
         })
