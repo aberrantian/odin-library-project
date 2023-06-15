@@ -9,17 +9,12 @@ dummyContent.forEach(book => {
     books.push(book);
 });
 
-// setup table contents;
-// export let table = [];
-// let table = doc.get('library');
-// console.log(table);
-updateLibrary();
-
 // setup screens
 export function init() {
     for (const key in screenTemplates) {
         document.body.appendChild(screenTemplates[key]());
     }
     
+    updateLibrary();
     setScreen();
 }
