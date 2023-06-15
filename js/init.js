@@ -1,6 +1,5 @@
 import { screenTemplates, setScreen } from "./helper/screenmgr.js";
 import { dummyContent } from "./helper/dummyContent.js";
-import { doc } from "./helper/doc.js";
 import { updateLibrary } from "./helper/updateLibrary.js";
 
 // setup library datebase
