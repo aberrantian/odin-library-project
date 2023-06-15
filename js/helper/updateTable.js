@@ -8,7 +8,7 @@ function p(string = 'hello world') {
 }
 
 export function updateTable() {
-    let table = doc.get('libraryTable');
+    let table = doc.get('library');
     while (table.firstChild) {
         table.remove(firstChild);
     }

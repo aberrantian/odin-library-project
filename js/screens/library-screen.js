@@ -25,7 +25,7 @@ export function createLibraryScreen() {
     btnContainer.append(addBookBtn, editBookBtn, removeBookBtn);
     
     const libraryGrid = doc.new('div');
-    libraryGrid.id = 'libraryTable';
+    libraryGrid.id = 'library';
     
     libraryScreen.append(title, btnContainer, libraryGrid);
 
