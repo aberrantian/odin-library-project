@@ -1,22 +1,38 @@
 import { doc } from "./doc.js";
 import { books } from "../init.js";
 
-export function updateTable() {
-    const cell = doc.new('td');
-    let cells = [];
-    const row = doc.new('tr');
-    let rows = [];
-    
-    let newTable = doc.new('table');
-    let table = doc.get('libraryTable');
+function p(string = 'hello world') {
+    let p = doc.new('p')
+    p.textContent = string;
+    return p;
+}
 
-    const topRow = new row;
+export function updateTable() {
+    let table = doc.get('libraryTable');
+    while (table.firstChild) {
+        table.remove(firstChild);
+    }
     
+    let cards = [];
 
     books.forEach(book => {
-        console.log(book);
+        let card = doc.new('div');
+        const title = p(`${book.title}`);
+        const author = p(`${book.author}`);
+        const pages = p(`pages: ${book.pages}`);
+        const date = p(`published in ${book.date}`);
+
+        if (book.read) {
+            card.classList.add('read');
+        }
+
+        card.classList.add('card');
+
+        card.append(title, author, pages, date);
+        cards.push(card);
     });
 
-    table = newTable;
-    table.id = 'libraryTable';
+    cards.forEach(card => {
+        table.appendChild(card);
+    })
 }
