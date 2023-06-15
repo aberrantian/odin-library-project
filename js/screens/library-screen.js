@@ -24,10 +24,10 @@ export function createLibraryScreen() {
     
     btnContainer.append(addBookBtn, editBookBtn, removeBookBtn);
     
-    const libraryTable = doc.new('table');
-    libraryTable.id = 'libraryTable';
+    const libraryGrid = doc.new('div');
+    libraryGrid.id = 'libraryTable';
     
-    libraryScreen.append(title, btnContainer, libraryTable);
+    libraryScreen.append(title, btnContainer, libraryGrid);
 
     return libraryScreen;
 }
