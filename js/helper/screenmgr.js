@@ -18,8 +18,8 @@ export const screens = {
 
 export function setScreen(screen = doc.get('libraryScreen')) {
     for (const screen in screens) {
-        screens[screen]().hidden = true;
+        screens[screen]().style.display = 'none';
     }
 
-    screen.hidden = false;
+    screen.style.display = '';
 }
