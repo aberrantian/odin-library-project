@@ -1,4 +1,5 @@
 import { doc } from "../helper/doc.js";
+import { toggleScreen } from "../helper/screenmgr.js";
 
 export function createLibraryScreen() {
     const libraryScreen = doc.new('div');
@@ -13,8 +14,8 @@ export function createLibraryScreen() {
     const addBookBtn = doc.new('button');
     addBookBtn.textContent = 'Add';
     addBookBtn.type = 'button';
-    addBookBtn.addEventListener('click', (event) => {
-        console.log(event)
+    addBookBtn.addEventListener('click', () => {
+        toggleScreen('addScreen');
     })
     
     const editBookBtn = doc.new('button');

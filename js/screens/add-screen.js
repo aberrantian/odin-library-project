@@ -1,4 +1,5 @@
 import { doc } from "../helper/doc.js";
+import { toggleScreen } from "../helper/screenmgr.js";
 
 export function createAddScreen() {
     const addScreen = doc.new('div');
@@ -69,6 +70,9 @@ export function createAddScreen() {
     cancelBtn.type = 'button';
     cancelBtn.textContent = 'Cancel';
     cancelBtn.id = 'cancelBtn';
+    cancelBtn.addEventListener('click', () => {
+        toggleScreen('addScreen');
+    })
     
     const submitBtn = doc.new('button');
     submitBtn.type = 'button';

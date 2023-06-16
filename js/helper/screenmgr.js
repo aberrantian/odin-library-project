@@ -23,3 +23,12 @@ export function setScreen(screen = doc.get('libraryScreen')) {
 
     screen.style.display = '';
 }
+
+export function toggleScreen(screen) {
+    screen = doc.get(screen);
+    if (screen.style.display == 'none') {
+        screen.style.display = '';
+    } else {
+        screen.style.display = 'none'
+    }
+}
