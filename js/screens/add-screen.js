@@ -32,6 +32,8 @@ export function createAddScreen() {
     
     const pages = doc.new('input');
     pages.id = 'pages';
+    pages.type = 'number';
+    pages.min = 0;
 
 
     const dateLabel = doc.new('label');
@@ -40,6 +42,8 @@ export function createAddScreen() {
     
     const date = doc.new('input');
     date.id = 'date';
+    date.type = 'number';
+    date.min = 0;
 
 
     const readLabel = doc.new('label');
@@ -48,6 +52,7 @@ export function createAddScreen() {
     
     const read = doc.new('input');
     read.id = 'read';
+    read.type = 'checkbox';
 
 
     const cancelBtn = doc.new('button');
