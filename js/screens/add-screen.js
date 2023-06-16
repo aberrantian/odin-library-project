@@ -70,7 +70,8 @@ export function createAddScreen() {
         authorLabel, author,
         pagesLabel, pages,
         dateLabel, date,
-        readLabel, read
+        readLabel, read,
+        cancelBtn, submitBtn
         );
 
     return addScreen;
