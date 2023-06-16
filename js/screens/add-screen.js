@@ -48,6 +48,9 @@ export function createAddScreen() {
     date.min = 0;
 
 
+    const readContainer = doc.new('div');
+    readContainer.id = 'readContainer';
+
     const readLabel = doc.new('label');
     readLabel.textContent = 'Read';
     readLabel.htmlFor = 'read';
@@ -55,6 +58,8 @@ export function createAddScreen() {
     const read = doc.new('input');
     read.id = 'read';
     read.type = 'checkbox';
+
+    readContainer.append(readLabel, read);
 
 
     const btnContainer = doc.new('div');
@@ -77,7 +82,7 @@ export function createAddScreen() {
         authorLabel, author,
         pagesLabel, pages,
         dateLabel, date,
-        readLabel, read,
+        readContainer,
         btnContainer
         );
 
