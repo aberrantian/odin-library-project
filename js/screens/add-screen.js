@@ -72,6 +72,7 @@ export function createAddScreen() {
     cancelBtn.id = 'cancelBtn';
     cancelBtn.addEventListener('click', () => {
         toggleScreen('addScreen');
+        doc.get('addBookBtn').focus();
     })
     
     const submitBtn = doc.new('button');

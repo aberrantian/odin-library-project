@@ -14,13 +14,16 @@ export function createLibraryScreen() {
     const addBookBtn = doc.new('button');
     addBookBtn.textContent = 'Add';
     addBookBtn.type = 'button';
+    addBookBtn.id = 'addBookBtn';
     addBookBtn.addEventListener('click', () => {
         toggleScreen('addScreen');
+        doc.get('title').focus();
     })
     
     const editBookBtn = doc.new('button');
     editBookBtn.textContent = 'Edit';
     editBookBtn.type = 'button';
+    editBookBtn.id = 'editBookBtn';
     editBookBtn.addEventListener('click', (event) => {
         console.log(event)
     })
@@ -28,6 +31,7 @@ export function createLibraryScreen() {
     const removeBookBtn = doc.new('button');
     removeBookBtn.textContent = 'Remove';
     removeBookBtn.type = 'button';
+    removeBookBtn.id = 'removeBookBtn';
     removeBookBtn.addEventListener('click', (event) => {
         console.log(event)
     })
