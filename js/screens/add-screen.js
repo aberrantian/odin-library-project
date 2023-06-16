@@ -16,6 +16,8 @@ export function createAddScreen() {
 
     const title = doc.new('input');
     title.id = 'title';
+    title.minLenght = 1;
+    title.required = true;
 
 
     const authorLabel = doc.new('label');
