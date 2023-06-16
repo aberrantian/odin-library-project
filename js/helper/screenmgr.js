@@ -1,13 +1,18 @@
 import { createLibraryScreen } from "../screens/library-screen.js";
+import { createAddScreen } from "../screens/add-screen.js";
 import { doc } from "./doc.js";
 
 export const screenTemplates = {
-    library: createLibraryScreen
+    library: createLibraryScreen,
+    add: createAddScreen
 }
 
 export const screens = {
     library: function() {
         return doc.get('libraryScreen');
+    },
+    add: function() {
+        return doc.get('addScreen');
     }
 }
 
