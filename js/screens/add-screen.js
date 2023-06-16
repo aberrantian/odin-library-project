@@ -57,13 +57,20 @@ export function createAddScreen() {
     read.type = 'checkbox';
 
 
+    const btnContainer = doc.new('div');
+    btnContainer.id = 'form-btnContainer';
+
     const cancelBtn = doc.new('button');
     cancelBtn.type = 'button';
     cancelBtn.textContent = 'Cancel';
+    cancelBtn.id = 'cancelBtn';
     
     const submitBtn = doc.new('button');
     submitBtn.type = 'button';
     submitBtn.textContent = 'Submit';
+    submitBtn.id = 'submitBtn';
+
+    btnContainer.append(cancelBtn, submitBtn);
 
     addForm.append(
         titleLabel, title,
@@ -71,7 +78,7 @@ export function createAddScreen() {
         pagesLabel, pages,
         dateLabel, date,
         readLabel, read,
-        cancelBtn, submitBtn
+        btnContainer
         );
 
     return addScreen;
