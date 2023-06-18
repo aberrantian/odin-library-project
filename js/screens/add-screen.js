@@ -116,19 +116,17 @@ export function createAddScreen() {
             dateLabel.textContent = 'Date';
         }
 
-        // const newBook = new Book(
-        //     title.value,
-        //     author.value,
-        //     Number(pages.value),
-        //     Number(date.value),
-        //     read.checked
-        // )
+        const newBook = new Book(
+            title.value,
+            author.value,
+            Number(pages.value),
+            Number(date.value),
+            read.checked
+        )
 
-        // books.push(newBook);
-        // console.log(books);
-
-        console.log(doc.get('library').firstChild);
-        // updateLibrary();
+        books.push(newBook);
+        updateLibrary();
+        toggleScreen('addScreen');
     })
 
     btnContainer.append(cancelBtn, submitBtn);

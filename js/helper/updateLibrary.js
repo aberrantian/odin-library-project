@@ -9,12 +9,7 @@ function p(string = 'hello world') {
 
 export function updateLibrary(library = doc.get('library')) {
     // clear library
-    if (library.firstChild) {
-        console.log(library.firstChild)
-    } else {
-        console.warn('firstChild not found');
-        console.log(library.firstChild)
-    }
+    library.innerHTML = '';
 
     // populate library
     let cards = [];
