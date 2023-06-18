@@ -1,5 +1,5 @@
 import { doc } from "./doc.js";
-import { books } from "../init.js";
+import { books } from "../../main.js";
 
 function p(string = 'hello world') {
     let p = doc.new('p')

@@ -1,4 +1,4 @@
-import { books } from "../init.js";
+import { books } from "../../main.js";
 import { Book } from "../objects/book.js";
 
 export function addBook(title, author, pages, date, read) {
