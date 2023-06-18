@@ -7,11 +7,10 @@ function p(string = 'hello world') {
     return p;
 }
 
-export function updateLibrary() {
-    let grid = doc.get('library');
-    if (grid) {
-        while (grid.firstChild) {
-            grid.remove(firstChild);
+export function updateLibrary(library = doc.get('library')) {
+    if (library) {
+        while (library.firstChild) {
+            library.remove(library.firstChild);
         }
         
         let cards = [];
@@ -39,9 +38,9 @@ export function updateLibrary() {
         }
         
         cards.forEach(card => {
-            grid.appendChild(card);
+            library.appendChild(card);
         })
     } else {
-        console.warn(`grid is ${grid}`);
+        console.warn(`library is ${library}`);
     }
 }
