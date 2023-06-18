@@ -80,6 +80,39 @@ export function createAddScreen() {
     submitBtn.type = 'button';
     submitBtn.textContent = 'Submit';
     submitBtn.id = 'submitBtn';
+    submitBtn.addEventListener('click', () => {
+        if (title.value.length <= 0) {
+            title.focus();
+            titleLabel.textContent = 'Title - Required';
+            return;
+        } else {
+            titleLabel.textContent = 'Title';
+        }
+        
+        if (author.value.length <= 0) {
+            author.focus();
+            authorLabel.textContent = 'Author - Required';
+            return;
+        } else {
+            authorLabel.textContent = 'Author';
+        }
+        
+        if (pages.value <= 0) {
+            pages.focus();
+            pagesLabel.textContent = 'Pages - Required';
+            return;
+        } else {
+            pagesLabel.textContent = 'Pages';
+        }
+
+        if (date.value <= 0) {
+            date.focus();
+            dateLabel.textContent = 'Date - Required';
+            return;
+        } else {
+            dateLabel.textContent = 'Date';
+        }
+    })
 
     btnContainer.append(cancelBtn, submitBtn);
 
