@@ -8,12 +8,16 @@ function p(string = 'hello world') {
 }
 
 export function updateLibrary(library = doc.get('library')) {
-    if (library) {
-        while (library.firstChild) {
-            library.remove(library.firstChild);
-        }
-        
-        let cards = [];
+    // clear library
+    if (library.firstChild) {
+        console.log(library.firstChild)
+    } else {
+        console.warn('firstChild not found');
+        console.log(library.firstChild)
+    }
+
+    // populate library
+    let cards = [];
     
         books.forEach(book => {
             let card = doc.new('div');
@@ -40,7 +44,4 @@ export function updateLibrary(library = doc.get('library')) {
         cards.forEach(card => {
             library.appendChild(card);
         })
-    } else {
-        console.warn(`library is ${library}`);
-    }
 }

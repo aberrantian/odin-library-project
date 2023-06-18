@@ -1,5 +1,8 @@
 import { doc } from "../helper/doc.js";
 import { toggleScreen } from "../helper/screenmgr.js";
+import { Book } from "../objects/book.js";
+import { books } from "../../main.js";
+import { updateLibrary } from "../helper/updateLibrary.js";
 
 export function createAddScreen() {
     const addScreen = doc.new('div');
@@ -80,7 +83,7 @@ export function createAddScreen() {
     submitBtn.type = 'button';
     submitBtn.textContent = 'Submit';
     submitBtn.id = 'submitBtn';
-    submitBtn.addEventListener('click', () => {
+    submitBtn.addEventListener('click', (event) => {
         if (title.value.length <= 0) {
             title.focus();
             titleLabel.textContent = 'Title - Required';
@@ -112,6 +115,20 @@ export function createAddScreen() {
         } else {
             dateLabel.textContent = 'Date';
         }
+
+        // const newBook = new Book(
+        //     title.value,
+        //     author.value,
+        //     Number(pages.value),
+        //     Number(date.value),
+        //     read.checked
+        // )
+
+        // books.push(newBook);
+        // console.log(books);
+
+        console.log(doc.get('library').firstChild);
+        // updateLibrary();
     })
 
     btnContainer.append(cancelBtn, submitBtn);
