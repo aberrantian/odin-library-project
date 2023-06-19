@@ -132,6 +132,7 @@ export function createAddScreen() {
         books.unshift(newBook);
         updateLibrary();
         toggleScreen('addScreen');
+        doc.get('addForm').reset();
     })
 
     btnContainer.append(cancelBtn, submitBtn);
