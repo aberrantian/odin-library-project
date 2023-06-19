@@ -36,10 +36,22 @@ export function createAddScreen() {
     pagesLabel.textContent = 'Pages';
     pagesLabel.htmlFor = 'pages';
     
+    const numberInputKeys = [
+        "ArrowLeft",
+        "ArrowRight",
+        "Backspace",
+        "Delete",
+    ];
+
     const pages = doc.new('input');
     pages.id = 'pages';
     pages.type = 'number';
     pages.min = 0;
+    pages.addEventListener('keydown', (event) => {
+        if (isNaN(Number(event.key)) && !(numberInputKeys.includes(event.key))) {
+            event.preventDefault();
+        }
+    })
 
 
     const dateLabel = doc.new('label');
@@ -51,7 +63,7 @@ export function createAddScreen() {
     date.type = 'number';
     date.min = 0;
     date.addEventListener('keydown', (event) => {
-        if (isNaN(Number(event.key))) {
+        if (isNaN(Number(event.key)) && !(numberInputKeys.includes(event.key))) {
             event.preventDefault();
         }
     })
