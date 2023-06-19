@@ -124,7 +124,7 @@ export function createAddScreen() {
             read.checked
         )
 
-        books.push(newBook);
+        books.unshift(newBook);
         updateLibrary();
         toggleScreen('addScreen');
     })
