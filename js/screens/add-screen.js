@@ -50,6 +50,11 @@ export function createAddScreen() {
     date.id = 'date';
     date.type = 'number';
     date.min = 0;
+    date.addEventListener('keydown', (event) => {
+        if (isNaN(Number(event.key))) {
+            event.preventDefault();
+        }
+    })
 
 
     const readContainer = doc.new('div');
