@@ -1,5 +1,5 @@
 import { doc } from "./doc.js";
-import { books } from "../../main.js";
+import { books, editMode } from "../../main.js";
 
 function p(string = 'hello world') {
     let p = doc.new('p')
@@ -34,6 +34,11 @@ export function updateLibrary(library = doc.get('library')) {
     for (let index = 0; index < cards.length; index++) {
         const card = cards[index];
         card.id = index + 1;
+        card.addEventListener('click', (event) => {
+            if (editMode.state) {
+                console.log(`clicked on ${event.target.id}`);
+            }
+        })
     }
     
     cards.forEach(card => {
