@@ -49,6 +49,10 @@ body {
     margin-bottom: 8px;
 }
 
+.card > * {
+    pointer-events: none;
+}
+
 .read {
     border-left: solid 8px green;
 }
