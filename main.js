@@ -17,6 +17,15 @@ export let editMode = {
     state: false,
     toggle: function() {
         editMode.state = !(editMode.state)
+    },
+    target: {
+        id: null,
+        get: function() {
+            return editMode.target.id;
+        },
+        set: function(value) {
+            editMode.target.id = value;
+        }
     }
 }
 

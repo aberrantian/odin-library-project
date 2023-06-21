@@ -147,14 +147,14 @@ export function createAddScreen() {
         )
 
         if (editMode.state) {
-            console.log('replace book');
+            books[editMode.target.id] = newBook;
         } else {
-            console.log('add new book');
+            books.unshift(newBook);
         }
-        // books.unshift(newBook);
-        // updateLibrary();
-        // toggleScreen('addScreen');
-        // doc.get('addForm').reset();
+
+        updateLibrary();
+        toggleScreen('addScreen');
+        doc.get('addForm').reset();
     })
 
     btnContainer.append(cancelBtn, submitBtn);

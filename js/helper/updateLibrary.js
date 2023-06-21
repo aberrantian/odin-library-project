@@ -37,7 +37,10 @@ export function updateLibrary(library = doc.get('library')) {
         card.id = index;
         card.addEventListener('click', (event) => {
             if (editMode.state) {
-                const book = books[event.target.id];
+                const target = event.target.id;
+                editMode.target.id = target;
+                
+                const book = books[target];
                 doc.get('title').value = book.title;
                 doc.get('author').value = book.author;
                 doc.get('pages').value = book.pages;
