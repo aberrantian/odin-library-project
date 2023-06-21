@@ -19,14 +19,12 @@ export function createLibraryScreen() {
     addBookBtn.addEventListener('click', () => {
         if (editMode.state) {
             editMode.toggle();
-            editBookBtn.classList.remove('edit-on');
         }
 
         if (removeMode.state) {
             removeMode.toggle();
-            removeBookBtn.classList.remove('remove-on');
         }
-        
+
         toggleScreen('addScreen');
         doc.get('title').focus();
     })
@@ -37,12 +35,6 @@ export function createLibraryScreen() {
     editBookBtn.id = 'editBookBtn';
     editBookBtn.addEventListener('click', () => {
         editMode.toggle()
-
-        if (editMode.state) {
-            editBookBtn.classList.add('edit-on')
-        } else {
-            editBookBtn.classList.remove('edit-on')
-        }
     })
     
     const removeBookBtn = doc.new('button');
@@ -51,12 +43,6 @@ export function createLibraryScreen() {
     removeBookBtn.id = 'removeBookBtn';
     removeBookBtn.addEventListener('click', () => {
         removeMode.toggle();
-
-        if (removeMode.state) {
-            removeBookBtn.classList.add('remove-on');
-        } else {
-            removeBookBtn.classList.remove('remove-on');
-        }
     })
     
     btnContainer.append(addBookBtn, editBookBtn, removeBookBtn);
