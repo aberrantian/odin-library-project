@@ -1,10 +1,12 @@
 import { createLibraryScreen } from "../screens/library-screen.js";
 import { createAddScreen } from "../screens/add-screen.js";
+import { createRemoveScreen } from "../screens/remove-screen.js";
 import { doc } from "./doc.js";
 
 export const screenTemplates = {
     library: createLibraryScreen,
-    add: createAddScreen
+    add: createAddScreen,
+    remove: createRemoveScreen
 }
 
 export const screens = {
@@ -13,6 +15,9 @@ export const screens = {
     },
     add: function() {
         return doc.get('addScreen');
+    },
+    remove: function() {
+        return doc.get('removeScreen');
     }
 }
 
