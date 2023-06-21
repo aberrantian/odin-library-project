@@ -1,6 +1,6 @@
 import { doc } from "../helper/doc.js";
 import { toggleScreen } from "../helper/screenmgr.js";
-import { books, editMode } from "../../main.js";
+import { editMode } from "../../main.js";
 
 export function createLibraryScreen() {
     const libraryScreen = doc.new('div');
@@ -17,6 +17,7 @@ export function createLibraryScreen() {
     addBookBtn.type = 'button';
     addBookBtn.id = 'addBookBtn';
     addBookBtn.addEventListener('click', () => {
+        editMode.toggle();
         toggleScreen('addScreen');
         doc.get('title').focus();
     })

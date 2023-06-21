@@ -1,7 +1,7 @@
 import { doc } from "../helper/doc.js";
 import { toggleScreen } from "../helper/screenmgr.js";
 import { Book } from "../objects/book.js";
-import { books } from "../../main.js";
+import { books, editMode } from "../../main.js";
 import { updateLibrary } from "../helper/updateLibrary.js";
 
 export function createAddScreen() {
@@ -146,10 +146,15 @@ export function createAddScreen() {
             read.checked
         )
 
-        books.unshift(newBook);
-        updateLibrary();
-        toggleScreen('addScreen');
-        doc.get('addForm').reset();
+        if (editMode.state) {
+            console.log('replace book');
+        } else {
+            console.log('add new book');
+        }
+        // books.unshift(newBook);
+        // updateLibrary();
+        // toggleScreen('addScreen');
+        // doc.get('addForm').reset();
     })
 
     btnContainer.append(cancelBtn, submitBtn);

@@ -37,7 +37,12 @@ export function updateLibrary(library = doc.get('library')) {
         card.id = index;
         card.addEventListener('click', (event) => {
             if (editMode.state) {
-                console.log(books[event.target.id]);
+                const book = books[event.target.id];
+                doc.get('title').value = book.title;
+                doc.get('author').value = book.author;
+                doc.get('pages').value = book.pages;
+                doc.get('date').value = book.date;
+                doc.get('read').checked = book.read;
                 toggleScreen('addScreen');
             }
         })
