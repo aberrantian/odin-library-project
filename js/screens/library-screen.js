@@ -1,6 +1,6 @@
 import { doc } from "../helper/doc.js";
 import { toggleScreen } from "../helper/screenmgr.js";
-import { editMode } from "../../main.js";
+import { editMode, removeMode } from "../../main.js";
 
 export function createLibraryScreen() {
     const libraryScreen = doc.new('div');
@@ -21,6 +21,12 @@ export function createLibraryScreen() {
             editMode.toggle();
             editBookBtn.classList.remove('edit-on');
         }
+
+        if (removeMode.state) {
+            removeMode.toggle();
+            removeBookBtn.classList.remove('remove-on');
+        }
+        
         toggleScreen('addScreen');
         doc.get('title').focus();
     })
@@ -44,7 +50,13 @@ export function createLibraryScreen() {
     removeBookBtn.type = 'button';
     removeBookBtn.id = 'removeBookBtn';
     removeBookBtn.addEventListener('click', () => {
-        console.log('remove a book')
+        removeMode.toggle();
+
+        if (removeMode.state) {
+            removeBookBtn.classList.add('remove-on');
+        } else {
+            removeBookBtn.classList.remove('remove-on');
+        }
     })
     
     btnContainer.append(addBookBtn, editBookBtn, removeBookBtn);

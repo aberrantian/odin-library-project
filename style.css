@@ -61,6 +61,10 @@ body {
     background-color: green;
 }
 
+.remove-on {
+    background-color: red;
+}
+
 #addScreen {
     background-color: rgba(0, 0, 0, 0.5);
     height: 100vh;
