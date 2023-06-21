@@ -51,6 +51,8 @@ export function createAddScreen() {
     pages.addEventListener('keydown', (event) => {
         if (isNaN(Number(event.key)) && !(numberInputKeys.includes(event.key))) {
             event.preventDefault();
+        } else if (event.key == " ") {
+            event.preventDefault();
         }
     })
 
@@ -65,6 +67,8 @@ export function createAddScreen() {
     date.min = 0;
     date.addEventListener('keydown', (event) => {
         if (isNaN(Number(event.key)) && !(numberInputKeys.includes(event.key))) {
+            event.preventDefault();
+        } else if (event.key == " ") {
             event.preventDefault();
         }
     })
