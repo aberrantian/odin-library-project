@@ -1,5 +1,5 @@
 import { doc } from "./doc.js";
-import { books, editMode } from "../../main.js";
+import { books, editMode, removeMode } from "../../main.js";
 import { toggleScreen } from "./screenmgr.js";
 
 function p(string = 'hello world') {
@@ -47,6 +47,11 @@ export function updateLibrary(library = doc.get('library')) {
                 doc.get('date').value = book.date;
                 doc.get('read').checked = book.read;
                 toggleScreen('addScreen');
+            } else if (removeMode.state) {
+                const target = event.target;
+                removeMode.target.id = target;
+                removeMode.target.info = target.childNodes
+                toggleScreen('removeScreen');
             }
         })
     }
