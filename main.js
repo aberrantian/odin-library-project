@@ -29,5 +29,13 @@ export let editMode = {
     }
 }
 
+export let removeMode = {
+    state: false,
+    toggle: function() {
+        removeMode.state = !(removeMode.state)
+    },
+    target: null
+}
+
 updateLibrary();
 setScreen();
