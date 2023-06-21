@@ -55,7 +55,10 @@ export let removeMode = {
             doc.get('removeBookBtn').classList.remove('remove-on')
         }
     },
-    target: null
+    target: {
+        id: null,
+        info: []
+    }
 }
 
 updateLibrary();
