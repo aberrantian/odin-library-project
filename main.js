@@ -13,5 +13,12 @@ for (const key in screenTemplates) {
     document.body.appendChild(screenTemplates[key]());
 }
 
+export let editMode = {
+    state: false,
+    toggle: function() {
+        editMode.state = !(editMode.state)
+    }
+}
+
 updateLibrary();
 setScreen();
