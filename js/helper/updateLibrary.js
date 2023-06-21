@@ -49,8 +49,17 @@ export function updateLibrary(library = doc.get('library')) {
                 toggleScreen('addScreen');
             } else if (removeMode.state) {
                 const target = event.target;
-                removeMode.target.id = target;
-                removeMode.target.info = target.childNodes
+                removeMode.target = target;
+
+                const bookInfo = doc.get('rmvBookInfo');
+                bookInfo.innerHTML = '';
+
+                for (let index = 0; index < target.childNodes.length; index++) {
+                    const p = doc.new('p');
+                    p.textContent = target.childNodes[index].textContent;
+                    bookInfo.append(p);
+                }
+
                 toggleScreen('removeScreen');
             }
         })
