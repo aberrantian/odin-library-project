@@ -17,7 +17,9 @@ export function createLibraryScreen() {
     addBookBtn.type = 'button';
     addBookBtn.id = 'addBookBtn';
     addBookBtn.addEventListener('click', () => {
-        editMode.toggle();
+        if (editMode.state) {
+            editMode.toggle();
+        }
         toggleScreen('addScreen');
         doc.get('title').focus();
     })
