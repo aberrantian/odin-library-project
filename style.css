@@ -57,6 +57,10 @@ body {
     border-left: solid 8px green;
 }
 
+.on {
+    background-color: green;
+}
+
 #addScreen {
     background-color: rgba(0, 0, 0, 0.5);
     height: 100vh;

@@ -19,6 +19,7 @@ export function createLibraryScreen() {
     addBookBtn.addEventListener('click', () => {
         if (editMode.state) {
             editMode.toggle();
+            editBookBtn.classList.remove('on');
         }
         toggleScreen('addScreen');
         doc.get('title').focus();
@@ -28,9 +29,14 @@ export function createLibraryScreen() {
     editBookBtn.textContent = 'Edit';
     editBookBtn.type = 'button';
     editBookBtn.id = 'editBookBtn';
-    editBookBtn.addEventListener('click', (event) => {
+    editBookBtn.addEventListener('click', () => {
         editMode.toggle()
-        // remember to make sure editmode and removemode can't be on at the same time
+
+        if (editMode.state) {
+            editBookBtn.classList.add('on')
+        } else {
+            editBookBtn.classList.remove('on')
+        }
     })
     
     const removeBookBtn = doc.new('button');
