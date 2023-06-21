@@ -139,6 +139,11 @@ body {
     width: fit-content;
     padding: 16px;
     border: solid 1px black;
+    align-items: center;
+}
+
+#confirmMessage {
+    margin-bottom: 16px;
 }
 
 #rmvBtnContainer {

@@ -11,8 +11,8 @@ export function createRemoveScreen() {
     removeScreenContent.id = 'removeScreenContent';
 
     const confirmMessage = doc.new('p');
-    confirmMessage.textContent =
-        'Are you sure you want to permanently delete the following book from your library?';
+    confirmMessage.textContent ='Permanently delete the following book?';
+    confirmMessage.id = 'confirmMessage';
 
     const bookInfo = doc.new('div');
     bookInfo.id = 'rmvBookInfo';
