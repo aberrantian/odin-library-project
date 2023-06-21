@@ -41,6 +41,7 @@ export function createAddScreen() {
         "ArrowRight",
         "Backspace",
         "Delete",
+        "Tab",
     ];
 
     const pages = doc.new('input');
