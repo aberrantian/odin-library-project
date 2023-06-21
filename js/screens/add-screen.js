@@ -91,11 +91,11 @@ export function createAddScreen() {
     const btnContainer = doc.new('div');
     btnContainer.id = 'form-btnContainer';
 
-    const cancelBtn = doc.new('button');
-    cancelBtn.type = 'button';
-    cancelBtn.textContent = 'Cancel';
-    cancelBtn.id = 'cancelBtn';
-    cancelBtn.addEventListener('click', () => {
+    const cancelAddBtn = doc.new('button');
+    cancelAddBtn.type = 'button';
+    cancelAddBtn.textContent = 'Cancel';
+    cancelAddBtn.id = 'cancelAddBtn';
+    cancelAddBtn.addEventListener('click', () => {
         toggleScreen('addScreen');
         doc.get('addForm').reset();
         doc.get('addBookBtn').focus();
@@ -157,7 +157,7 @@ export function createAddScreen() {
         doc.get('addForm').reset();
     })
 
-    btnContainer.append(cancelBtn, submitBtn);
+    btnContainer.append(cancelAddBtn, submitBtn);
 
     addForm.append(
         titleLabel, titleInput,
