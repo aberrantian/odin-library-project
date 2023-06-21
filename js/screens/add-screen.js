@@ -18,18 +18,18 @@ export function createAddScreen() {
     titleLabel.textContent = 'Title';
     titleLabel.htmlFor = 'title';
 
-    const title = doc.new('input');
-    title.id = 'title';
-    title.minLenght = 1;
-    title.required = true;
+    const titleInput = doc.new('input');
+    titleInput.id = 'title';
+    titleInput.minLenght = 1;
+    titleInput.required = true;
 
 
     const authorLabel = doc.new('label');
     authorLabel.textContent = 'Author';
     authorLabel.htmlFor = 'author';
     
-    const author = doc.new('input');
-    author.id = 'author';
+    const authorInput = doc.new('input');
+    authorInput.id = 'author';
 
 
     const pagesLabel = doc.new('label');
@@ -44,11 +44,11 @@ export function createAddScreen() {
         "Tab",
     ];
 
-    const pages = doc.new('input');
-    pages.id = 'pages';
-    pages.type = 'number';
-    pages.min = 0;
-    pages.addEventListener('keydown', (event) => {
+    const pagesInput = doc.new('input');
+    pagesInput.id = 'pages';
+    pagesInput.type = 'number';
+    pagesInput.min = 0;
+    pagesInput.addEventListener('keydown', (event) => {
         if (isNaN(Number(event.key)) && !(numberInputKeys.includes(event.key))) {
             event.preventDefault();
         } else if (event.key == " ") {
@@ -61,11 +61,11 @@ export function createAddScreen() {
     dateLabel.textContent = 'Date';
     dateLabel.htmlFor = 'date';
     
-    const date = doc.new('input');
-    date.id = 'date';
-    date.type = 'number';
-    date.min = 0;
-    date.addEventListener('keydown', (event) => {
+    const dateInput = doc.new('input');
+    dateInput.id = 'date';
+    dateInput.type = 'number';
+    dateInput.min = 0;
+    dateInput.addEventListener('keydown', (event) => {
         if (isNaN(Number(event.key)) && !(numberInputKeys.includes(event.key))) {
             event.preventDefault();
         } else if (event.key == " ") {
@@ -81,11 +81,11 @@ export function createAddScreen() {
     readLabel.textContent = 'Read';
     readLabel.htmlFor = 'read';
     
-    const read = doc.new('input');
-    read.id = 'read';
-    read.type = 'checkbox';
+    const readInput = doc.new('input');
+    readInput.id = 'read';
+    readInput.type = 'checkbox';
 
-    readContainer.append(readLabel, read);
+    readContainer.append(readLabel, readInput);
 
 
     const btnContainer = doc.new('div');
@@ -160,10 +160,10 @@ export function createAddScreen() {
     btnContainer.append(cancelBtn, submitBtn);
 
     addForm.append(
-        titleLabel, title,
-        authorLabel, author,
-        pagesLabel, pages,
-        dateLabel, date,
+        titleLabel, titleInput,
+        authorLabel, authorInput,
+        pagesLabel, pagesInput,
+        dateLabel, dateInput,
         readContainer,
         btnContainer
         );
