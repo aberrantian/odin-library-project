@@ -1,5 +1,6 @@
 import { doc } from "../helper/doc.js";
 import { toggleScreen } from "../helper/screenmgr.js";
+import { books, editMode } from "../../main.js";
 
 export function createLibraryScreen() {
     const libraryScreen = doc.new('div');
@@ -25,7 +26,8 @@ export function createLibraryScreen() {
     editBookBtn.type = 'button';
     editBookBtn.id = 'editBookBtn';
     editBookBtn.addEventListener('click', (event) => {
-        console.log(event)
+        editMode.toggle()
+        // remember to make sure editmode and removemode can't be on at the same time
     })
     
     const removeBookBtn = doc.new('button');
