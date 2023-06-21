@@ -1,5 +1,6 @@
 import { doc } from "./doc.js";
 import { books, editMode } from "../../main.js";
+import { toggleScreen } from "./screenmgr.js";
 
 function p(string = 'hello world') {
     let p = doc.new('p')
@@ -33,10 +34,11 @@ export function updateLibrary(library = doc.get('library')) {
 
     for (let index = 0; index < cards.length; index++) {
         const card = cards[index];
-        card.id = index + 1;
+        card.id = index;
         card.addEventListener('click', (event) => {
             if (editMode.state) {
-                console.log(`clicked on ${event.target.id}`);
+                console.log(books[event.target.id]);
+                toggleScreen('addScreen');
             }
         })
     }
