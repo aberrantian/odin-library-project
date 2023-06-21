@@ -1,9 +1,13 @@
 import { doc } from "../helper/doc.js";
 import { removeMode } from "../../main.js";
+import { toggleScreen } from "../helper/screenmgr.js";
 
 export function createRemoveScreen() {
     const removeScreen = doc.new('div');
     removeScreen.id = 'removeScreen';
+
+    const removeScreenContent = doc.new('div');
+    removeScreenContent.id = 'removeScreenContent';
 
     const confirmMessage = doc.new('p');
     confirmMessage.textContent =
@@ -19,6 +23,10 @@ export function createRemoveScreen() {
     cancelRemoveBtn.type = 'button';
     cancelRemoveBtn.textContent = 'Cancel';
     cancelRemoveBtn.id = 'cancelRemoveBtn';
+    cancelRemoveBtn.addEventListener('click', () => {
+        toggleScreen('removeScreen');
+    })
+
 
     const confirmRemoveBtn = doc.new('button');
     confirmRemoveBtn.type = 'button';
@@ -26,6 +34,8 @@ export function createRemoveScreen() {
     confirmRemoveBtn.id = 'confirmRemoveBtn';
 
     rmvBtnContainer.append(cancelRemoveBtn, confirmRemoveBtn);
+    removeScreenContent.append(confirmMessage, bookInfo, rmvBtnContainer);
+    removeScreen.append(removeScreenContent);
 
     return removeScreen;
 }
