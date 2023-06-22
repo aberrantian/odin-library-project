@@ -1,0 +1,105 @@
+:root {
+    --rosewater: #dc8a78;
+	--flamingo: #dd7878;
+	--pink: #ea76cb;
+	--mauve: #8839ef;
+	--red: #d20f39;
+	--maroon: #e64553;
+	--peach: #fe640b;
+	--yellow: #df8e1d;
+	--green: #40a02b;
+	--teal: #179299;
+	--sky: #04a5e5;
+	--sapphire: #209fb5;
+    --blue: #1e66f5;
+	--lavender: #7287fd;
+	--text: #4c4f69;
+	--subtext1: #5c5f77;
+	--subtext0: #6c6f85;
+	--overlay2: #7c7f93;
+	--overlay1: #8c8fa1;
+	--overlay0: #9ca0b0;
+	--surface2: #acb0be;
+	--surface1: #bcc0cc;
+	--surface0: #ccd0da;
+	--base: #eff1f5;
+	--mantle: #e6e9ef;
+	--crust: #dce0e8;
+}
+
+html {
+    color: var(--text);
+}
+
+#libraryScreen {
+    background-color: var(--crust);
+}
+
+button {
+    background-color: var(--base);
+    color: var(--text);
+    border: 1px solid var(--overlay0);
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--surface0);
+}
+
+button:active {
+    background-color: var(--surface1);
+}
+
+.edit-on {
+    background-color: var(--yellow);
+    border-color: var(--yellow);
+    color: var(--base);
+}
+
+.edit-on:hover {
+    background-color: var(--yellow);
+}
+
+.remove-on {
+    background-color: var(--red);
+    border-color: var(--red);
+    color: var(--base);
+}
+
+.remove-on:hover {
+    background-color: var(--red);
+}
+
+.card {
+    background-color: var(--base);
+    border: 2px solid var(--base);
+}
+
+.read {
+    border: 2px solid var(--green);
+}
+
+#addScreen {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#addForm {
+    background-color: var(--crust);
+    border-color: var(--overlay0);
+}
+
+#removeScreen {
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+#removeScreenContent {
+    background-color: var(--crust);
+    border-color: var(--overlay0);
+}
+
+#confirmRemoveBtn:hover {
+    background-color: var(--red);
+    border-color: var(--red);
+    color: var(--base);
+}
