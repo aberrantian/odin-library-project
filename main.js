@@ -63,8 +63,12 @@ export let theme = {
     toggle: function() {
         if (theme.state == 'latte') {
             theme.state = 'frappe';
+            doc.get('csstheme').setAttribute('href', './styles/frappe.css');
+            doc.get('toggleThemeBtn').textContent = 'latte';
         } else {
             theme.state = 'latte';
+            doc.get('csstheme').setAttribute('href', './styles/latte.css');
+            doc.get('toggleThemeBtn').textContent = 'frappe';
         }
     }
 }

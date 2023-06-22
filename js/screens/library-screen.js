@@ -54,7 +54,6 @@ export function createLibraryScreen() {
     toggleThemeBtn.id = 'toggleThemeBtn';
     toggleThemeBtn.addEventListener('click', () => {
         theme.toggle();
-        console.log(theme.state)
     })
     
     mainButtons.append(addBookBtn, editBookBtn, removeBookBtn);
