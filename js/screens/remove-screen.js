@@ -34,7 +34,7 @@ export function createRemoveScreen() {
     confirmRemoveBtn.textContent = 'Confirm';
     confirmRemoveBtn.id = 'confirmRemoveBtn';
     confirmRemoveBtn.addEventListener('click', () => {
-        const target = books[removeMode.target.id];
+        const target = removeMode.target.id;
         books.splice(target, 1);
         updateLibrary();
         removeMode.toggle();
