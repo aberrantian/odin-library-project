@@ -1,6 +1,6 @@
 import { doc } from "../helper/doc.js";
 import { toggleScreen } from "../helper/screenmgr.js";
-import { editMode, removeMode } from "../../main.js";
+import { editMode, removeMode, theme } from "../../main.js";
 
 export function createLibraryScreen() {
     const libraryScreen = doc.new('div');
@@ -11,6 +11,9 @@ export function createLibraryScreen() {
     
     const btnContainer = doc.new('div');
     btnContainer.id = 'btnContainer';
+
+    const mainButtons = doc.new('div');
+    mainButtons.id = 'mainButtons';
     
     const addBookBtn = doc.new('button');
     addBookBtn.textContent = 'Add';
@@ -44,8 +47,18 @@ export function createLibraryScreen() {
     removeBookBtn.addEventListener('click', () => {
         removeMode.toggle();
     })
+
+    const toggleThemeBtn = doc.new('button');
+    toggleThemeBtn.textContent = 'frappe';
+    toggleThemeBtn.type = 'button';
+    toggleThemeBtn.id = 'toggleThemeBtn';
+    toggleThemeBtn.addEventListener('click', () => {
+        theme.toggle();
+        console.log(theme.state)
+    })
     
-    btnContainer.append(addBookBtn, editBookBtn, removeBookBtn);
+    mainButtons.append(addBookBtn, editBookBtn, removeBookBtn);
+    btnContainer.append(mainButtons, toggleThemeBtn)
     
     const libraryGrid = doc.new('div');
     libraryGrid.id = 'library';

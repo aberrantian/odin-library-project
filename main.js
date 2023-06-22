@@ -58,5 +58,16 @@ export let removeMode = {
     target: null
 }
 
+export let theme = {
+    state: 'latte',
+    toggle: function() {
+        if (theme.state == 'latte') {
+            theme.state = 'frappe';
+        } else {
+            theme.state = 'latte';
+        }
+    }
+}
+
 updateLibrary();
 setScreen();
