@@ -148,7 +148,7 @@
 }
 
 #title, #author, #pages, #date  {
-    appearance: none;
+    appearance: textfield;
     border: none;
     outline: none;
     height: 2em;
