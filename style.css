@@ -146,3 +146,12 @@
     height: 2em;
     padding: 8px;
 }
+
+#title, #author, #pages, #date  {
+    appearance: none;
+    border: none;
+    outline: none;
+    height: 2em;
+    padding-left: 4px;
+    /* border-radius: 16px; */
+}

@@ -104,3 +104,8 @@ button:active {
     border-color: var(--red);
     color: var(--base);
 }
+
+#title, #author, #pages, #date {
+    background-color: var(--base);
+    color: var(--text);
+}
