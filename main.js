@@ -24,9 +24,11 @@ export let editMode = {
         editMode.state = !(editMode.state)
 
         if (editMode.state) {
-            doc.get('editBookBtn').classList.add('edit-on')
+            doc.get('editBookBtn').classList.add('edit-on');
+            doc.get('cards-hover').setAttribute('href', './styles/cards-hover.css');
         } else {
-            doc.get('editBookBtn').classList.remove('edit-on')
+            doc.get('editBookBtn').classList.remove('edit-on');
+            doc.get('cards-hover').setAttribute('href', '');
         }
     },
     target: {
@@ -50,9 +52,11 @@ export let removeMode = {
         removeMode.state = !(removeMode.state)
         
         if (removeMode.state) {
-            doc.get('removeBookBtn').classList.add('remove-on')
+            doc.get('removeBookBtn').classList.add('remove-on');
+            doc.get('cards-hover').setAttribute('href', './styles/cards-hover.css');
         } else {
-            doc.get('removeBookBtn').classList.remove('remove-on')
+            doc.get('removeBookBtn').classList.remove('remove-on');
+            doc.get('cards-hover').setAttribute('href', '');
         }
     },
     target: null
