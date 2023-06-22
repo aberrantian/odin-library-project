@@ -3,12 +3,10 @@
     margin: 0;
 }
 
-body {
-    white-space: nowrap;
-}
-
 #libraryScreen {
     padding: 16px;
+    height: calc(100vh - 32px);
+    width: calc(100vw - 32px);
 }
 
 #libraryScreen > h1 {
